@@ -6,4 +6,4 @@ import calendar
 def index(request):
     lc = calendar.HTMLCalendar()
     body = lc.formatyear(2020, width=4)
-    return HttpResponse(body)
+    return render(request, 'gyogyo/index.html')
