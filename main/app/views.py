@@ -1,7 +1,7 @@
 import datetime
 from django.shortcuts import redirect, render
 from django.views import generic
-from .forms import BS4ScheduleForm, SimpleScheduleForm
+from .forms import cashform, BS4ScheduleForm, SimpleScheduleForm
 from .models import Schedule
 from . import mixins
 
@@ -104,7 +104,8 @@ class MonthWithFormsCalendar(mixins.MonthWithFormsMixin, generic.View):
         return render(request, self.template_name, context)
 
 
-
-def add_money(request):
+class add_money(generic.CreateView):
+    model = Schedule
+    form_class = cashform
     template_name = 'app/imput_cash.html'
-    return render(request,template_name)
+    success_url = "/"  # 成功時にリダイレクトするURL

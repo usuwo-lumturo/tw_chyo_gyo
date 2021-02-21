@@ -14,9 +14,9 @@ urlpatterns = [
         'month_with_schedule/<int:year>/<int:month>/',
         views.MonthWithScheduleCalendar.as_view(), name='month_with_schedule'
     ),
-    url(
-        r'add_money/',
-        views.add_money, name='add_money'
+    path(
+        'add_money/',
+        views.add_money.as_view(), name='add_money'
     ),
     path('mycalendar/', views.MyCalendar.as_view(), name='mycalendar'),
     path(

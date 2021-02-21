@@ -2,8 +2,15 @@ from django import forms
 from .models import Schedule
 
 
-class cashform(forms.Form):
-    subject = forms.CharField()
+class cashform(forms.ModelForm):
+    # check this page https://qiita.com/dai-takahashi/items/5042db0792c9f7d01c1e
+    
+    money = forms.IntegerField()
+
+    class Meta:
+        model = Schedule
+        fields = {'summary'}
+    
 
 
 class BS4ScheduleForm(forms.ModelForm):
