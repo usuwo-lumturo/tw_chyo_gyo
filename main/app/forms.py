@@ -2,6 +2,10 @@ from django import forms
 from .models import Schedule
 
 
+class cashform(forms.Form):
+    subject = forms.CharField()
+
+
 class BS4ScheduleForm(forms.ModelForm):
     """Bootstrapに対応するためのModelForm"""
 

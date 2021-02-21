@@ -102,3 +102,9 @@ class MonthWithFormsCalendar(mixins.MonthWithFormsMixin, generic.View):
             return redirect('app:month_with_forms')
 
         return render(request, self.template_name, context)
+
+
+
+def add_money(request):
+    template_name = 'app/imput_cash.html'
+    return render(request,template_name)
