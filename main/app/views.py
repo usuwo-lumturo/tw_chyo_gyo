@@ -109,3 +109,7 @@ class add_money(generic.CreateView):
     form_class = cashform
     template_name = 'app/imput_cash.html'
     success_url = "/"  # 成功時にリダイレクトするURL
+
+    def post(self,request,**kwargs):
+        form = self.form_class.save()
+        return redirect('app:add_money')
