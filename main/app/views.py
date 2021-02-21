@@ -111,5 +111,9 @@ class add_money(generic.CreateView):
     success_url = "/"  # 成功時にリダイレクトするURL
 
     def post(self,request,**kwargs):
-        form = self.form_class.save()
+        form = cashform(request.POST)
+        print('ok')
+        print(form)
+        if form.is_valid:
+            form.save()
         return redirect('app:add_money')
